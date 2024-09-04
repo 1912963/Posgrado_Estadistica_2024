@@ -52,9 +52,10 @@ t.test(conjunto$Diametro, mu =16.4)
 
 prod <- read.csv("produccion.csv", header = T)
 
-boxplot(prod$Kgsem ~ prod$Tiempo)
+boxplot(prod$Kgsem ~ prod$Tiempo,
+        col = "blue")
 t.test(prod$Kgsem ~ prod$Tiempo, paired = T)
-
+tapply(prod$Kgsem, prod$Tiempo, mean)
 
 
 
